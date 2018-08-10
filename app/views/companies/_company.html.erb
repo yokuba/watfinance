@@ -1,0 +1,14 @@
+<div class="col-sm-3 single-company-card" id=<%= company_path(company.id) %>>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="company-text">
+        <%= company.name %>
+      </h4>
+      <div class="company-content">
+        <h5><%= company.description %></h5>
+        <p><%= company.category %></p>
+        <%= link_to "I'm interested", company_path(company.id), class: 'interested' %>
+      </div>
+    </div>
+  </div><!-- card -->
+</div><!-- col-sm-3 -->
