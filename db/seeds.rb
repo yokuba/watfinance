@@ -19,23 +19,28 @@ def seed_users
 end
 
 def seed_companies
-  Company.create(category: 'fintech', name: 'Fine Ants', description: 'Fixing the bugs in investing, Fine Ants makes your money work for you.')
-  Company.create(category: 'healthcare', name: 'hackcare', description: 'Hack your way healthy.')
-  Company.create(category: 'transportation', name: 'GTFo', description: 'Going to Travel Forever (GTFo) is a different kind of company, one that invests in its employees.')
+  companies = %w(wm nue trex)
+
+  for company_symbol in companies do 
+    company = IEX::Resources::Company.get(company_symbol)
+    Company.create(
+      name: company.company_name,
+      description: company.description,
+      category: company.industry
+    )
+  end
 end
 
 def seed_values
   companies = Company.all
-  titles = ['green', 'employee-centric', 'humane', 'outreach']
+  titles = ['green', 'employee-centric', 'humane', 'outreach', 'fair_trade', 'education', 'waste management', 'health', 'economic growth', 'innovation', 'peace', 'water', 'sustainability']
   companies.each do |company|
-    5.times do
-      Value.create(
-        title: titles[rand(0..3)],
-        description: Faker::Lorem.sentences[0], 
-        user_id: rand(1..9), 
-        company_id: company.id
-      )
-    end
+    Value.create(
+      title: 'green',
+      description: 'Optimal methods for reducing waste', 
+      user_id: rand(1..11),
+      company_id: company.id
+    )
   end
 end
 
