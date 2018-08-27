@@ -1,0 +1,15 @@
+<% category_path_name = "#{params[:action]}_companies_path" %>
+
+<div class="col-sm-12">
+  <ul class="values-list">
+    <%= render all_values_button_partial_path, 
+               category_path_name: category_path_name %>
+    <% @values.each do |value| %>
+      <li class="value-item">
+        <%= link_to value.title, 
+                    send(category_path_name, value: value.title), 
+                    :class => ("selected-item" if params[:value] == value.title) %>
+      </li>
+    <% end %>
+  </ul>
+</div><!-- col-sm-12 -->
