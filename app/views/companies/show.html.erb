@@ -1,0 +1,11 @@
+<div id="single-company-content" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    	<%= image_tag @logo.url %>
+      <h2><%= @data.company_name %></h2>
+      <h3><%= @data.industry %></h3>
+      <p><%= @data.description %></p>
+      <p><%= @news[0].headline %></p>
+    </div>
+  </div><!-- row -->
+</div>
