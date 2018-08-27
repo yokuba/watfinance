@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'devise'
 gem 'iex-ruby-client'
 gem 'faker'
+gem 'httparty'
 gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
