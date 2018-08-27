@@ -3,56 +3,24 @@ $(
 ).on(
     'turbolinks:load',
     function() {
-        if (
-            $(
-                '.single-company-card'
-            )
-                .length
-        ) {
-            // set a solid background color style
-            if (
-                mode ==
-                1
-            ) {
+        $(
+            '.single-company-card'
+        ).each(
+            function() {
                 $(
-                    '.single-company-card'
-                ).each(
-                    function() {
-                        $(
-                            this
-                        ).addClass(
-                            'solid-color-mode'
-                        );
-                        $(
-                            this
-                        ).css(
-                            'background-color',
-                            randomColor()
-                        );
-                    }
+                    this
+                ).addClass(
+                    'border-color-mode'
                 );
-            } else {
-                // set a border color style
                 $(
-                    '.single-company-card'
-                ).each(
-                    function() {
-                        $(
-                            this
-                        ).addClass(
-                            'border-color-mode'
-                        );
-                        $(
-                            this
-                        ).css(
-                            'border',
-                            '5px solid ' +
-                                randomColor()
-                        );
-                    }
+                    this
+                ).css(
+                    'border',
+                    '5px solid ' +
+                        randomColor()
                 );
             }
-        }
+        );
 
         $(
             '#feed'
