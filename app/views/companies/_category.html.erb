@@ -1,0 +1,22 @@
+<div id="category-main-content" class="container">
+  <% if @value %>
+    <div class="row">
+      <h1 class="value-title"><%= @value.title %></h1>
+      <%= render 'companies/category/add_new_company', category: category %>
+    </div><!-- row -->
+
+    <div class="row">
+      <%= render @companies, value: @value%>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12" id="feed">
+        <%= render no_companies_partial_path %>
+      </div>
+    </div><!-- row -->  
+
+    <div class="infinite-scroll">
+      <%= will_paginate @companies %>
+    </div>
+  <% end %>
+</div><!-- container -->
