@@ -1,0 +1,4 @@
+- name: ruby
+  tag: master
+  service: app
+  command: bundle exec ruby
