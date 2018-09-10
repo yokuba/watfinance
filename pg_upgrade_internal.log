@@ -1,0 +1,7 @@
+Running in verbose mode
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Sep  8 16:56:20 2018
+-----------------------------------------------------------------
+
+could not open version file: /usr/local/var/postgres/PG_VERSION
