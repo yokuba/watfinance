@@ -1,8 +1,7 @@
 class Company < ApplicationRecord
 	include DumbStockClient
 
-	has_many :values
-	has_many :users, :through => :values
+	belongs_to :value
 
 	def self.create_companies
 		companies = DumbStockClient.get_companies.split("}")

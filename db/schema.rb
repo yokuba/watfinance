@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_035951) do
+ActiveRecord::Schema.define(version: 2018_09_06_045616) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2018_08_22_035951) do
     t.datetime "updated_at", null: false
     t.string "symbol"
     t.string "exchange"
+    t.string "logo_img_url"
+    t.integer "value_id"
+    t.index ["value_id"], name: "index_companies_on_value_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,12 +46,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_035951) do
   create_table "values", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "company_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_values_on_company_id"
-    t.index ["user_id"], name: "index_values_on_user_id"
   end
 
 end
