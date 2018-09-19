@@ -69,5 +69,5 @@ def seed_values
 end
 
 # seed_users
-# seed_companies
+seed_companies
 seed_values
